@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
@@ -13,7 +14,7 @@ func main() {
 	app.Get("/", func(c *fiber.Ctx) error {
 		slack_name := c.Query("slack_name")
 		track := c.Query("track")
-		res := &fiber.Map{
+		res := fiber.Map{
 			"slack_name":      slack_name,
 			"current_day":     time.Now().Weekday(),
 			"utc_time":        time.Now().UTC(),
@@ -26,5 +27,9 @@ func main() {
 		return c.JSON(res)
 	})
 
-	log.Fatal(app.Listen(":3000"))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "4000"
+	}
+	log.Fatal(app.Listen(":" + port))
 }
