@@ -18,7 +18,7 @@ func main() {
 			"current_day":     time.Now().Weekday(),
 			"utc_time":        time.Now().UTC(),
 			"track":           track,
-			"github_file_url": "",
+			"github_file_url": "https://github.com/codewithed/hng_ix_01/blob/main/main.go",
 			"github_repo_url": "https://github.com/codewithed/hng_ix_01",
 			"status_code":     200,
 		}
