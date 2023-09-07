@@ -1,2 +1,2 @@
 # hng_ix_01
-Stage 01 task og hngix
+Stage 01 task of hngix
