@@ -11,7 +11,7 @@ import (
 func main() {
 	app := fiber.New()
 
-	app.Get("/", func(c *fiber.Ctx) error {
+	app.Get("/api", func(c *fiber.Ctx) error {
 		slack_name := c.Query("slack_name")
 		track := c.Query("track")
 		res := fiber.Map{
